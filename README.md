@@ -339,6 +339,57 @@ print(df_cleaned[['datetimeLocal', 'value', 'cluster', 'recommendation']].head()
 ```
 <img width="523" height="115" alt="image" src="https://github.com/user-attachments/assets/b72d2060-ffdc-4f72-bd3a-b03ccb60e0b6" />
 
+Here’s your DAX code organized cleanly in **Markdown format** for documentation or presentation:
+
+---
+
+## 📊 Power BI DAX Measures for PM2.5 Dashboard
+
+### ✅ **1. Average PM2.5**
+
+```DAX
+Average PM2.5 = 
+AVERAGE('kigali_pm25_powerbi_complete'[value])
+```
+
+---
+
+### 🔺 **2. Max PM2.5**
+
+```DAX
+Max PM2.5 = 
+MAX('kigali_pm25_powerbi_complete'[value])
+```
+
+---
+
+### 🔻 **3. Min PM2.5**
+
+```DAX
+Min PM2.5 = 
+MIN('kigali_pm25_powerbi_complete'[value])
+```
+
+---
+
+### 🔴 **4. High Pollution Hours**
+
+(Threshold: PM2.5 > 35 µg/m³)
+
+```DAX
+High Pollution Hours = 
+CALCULATE(
+    COUNT('kigali_pm25_powerbi_complete'[value]),
+    'kigali_pm25_powerbi_complete'[value] > 35
+)
+```
+
+---
+
+
+<img width="502" height="290" alt="image" src="https://github.com/user-attachments/assets/8ad66e7e-51ad-4b2d-9bdd-516f0c5ea414" />
+
+
 
 
 
